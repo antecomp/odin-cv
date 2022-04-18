@@ -18,7 +18,8 @@ import uniqid from "uniqid"; // React always requires you to add a unique key to
 		console.log(educationArray);
 	}
 
-	const deleteEducation = (index) => {
+	const deleteEducation = (index, e) => {
+		e.preventDefault();
 		setEducationArray(
 			educationArray.filter((item, i) => i !== index)
 		)
@@ -35,12 +36,12 @@ import uniqid from "uniqid"; // React always requires you to add a unique key to
 	}
 
 	return(
-		<div className="form-education">
+		<div className="education-container">
 			{
 				educationArray.map((education, index) => {
 					return(
-					<form>
-						<button onClick={() => {deleteEducation(index)}}>Delete</button>
+					<form className="educationForm formX">
+						<h4>School #{index + 1}</h4><button onClick={e => {deleteEducation(index, e)}}>Delete</button>
 						<h5>Years?</h5>
 						<input value={education.yearRange} onChange={e => {updateEducationItem(index, "yearRange", e.target.value)}}></input>
 						<h5>Location?</h5>

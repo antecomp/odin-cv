@@ -27,6 +27,8 @@ const CVRender = (props) =>{ // props will be cvData from App.jsx
 			</div>
 		</div>
 
+		<hr />
+
 		<div className="cv-experience">
 			<h3>Experience</h3>
 			<ul>
@@ -40,6 +42,8 @@ const CVRender = (props) =>{ // props will be cvData from App.jsx
 				})}
 			</ul>
 		</div>
+
+		<hr />
 
 		<div className="cv-education"> 
 			<h3>Education</h3>

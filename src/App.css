@@ -3,12 +3,81 @@
   padding: 0;
 }
 
+body {
+  background-color: black;
+}
+
 .App {
   display: grid;
   grid-template-columns: 50% 50%;
+  height: 75ch;
+  max-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120ch;
+  max-width: 95vw;
+  background: white;
+  padding: 1ch;
+  border-radius: 10px;
 }
 
 .formcontainer {
-  height: 100vh;
+  height: 100%;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
+
+.formcontainer button {
+  align-self: center;
+}
+
+.formcontainer summary h4 {
+  display: inline;
+  cursor: pointer;
+}
+
+.formcontainer details div {
+  display: flex;
+  flex-direction: column;
+}
+
+.CVRender {
+  overflow: auto;
+  padding: 2ch;
+}
+
+button, input, textarea {
+  width: 95%;
+}
+
+textarea {
+  max-width: 95%;
+}
+
+hr {
+  margin: 2ch 1ch;
+}
+
+.formX {
+  background: #c9c9c9;
+  margin: 1ch;
+  padding: 0.5ch;
+  border-radius: 10px;
+}
+
+.CVRender ul {
+  list-style: none;
+}
+
+.CVRender ul li {
+  margin: 0.5ch 0.5ch;
+}
+
+.cv-details-container {
+  display: flex;
+  gap: 1ch;
+}
+

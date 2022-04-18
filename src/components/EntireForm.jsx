@@ -24,29 +24,35 @@ const EntireForm = (props) => {
 
 	return(
 		<div className="formcontainer">
-			<h4>Basic Info</h4>
-			<h5>Name:</h5>
-			<input value={cvData.name} name="name" onChange={simpleInputUpdate}></input>
-			<h5>Profession:</h5>
-			<input value={cvData.prof} name="prof" onChange={simpleInputUpdate}></input>
-			<h5>Email:</h5>
-			<input value={cvData.email} name="email" onChange={simpleInputUpdate}></input>
-			<h5>Phone:</h5>
-			<input value={cvData.phone} name="phone" onChange={simpleInputUpdate}></input>
-			<h5>Address:</h5>
-			<input value={cvData.address} name="address" onChange={simpleInputUpdate}></input>
-			<hr />
-			<h4>About Me</h4>
-			<textarea 
-			id="aboutme" cols="30" rows="10" 
-			value={cvData.description} 
-			name="description"
-			onChange={simpleInputUpdate}
-			>	
-			</textarea>
+			<details>
+				<summary><h4>Basic Info</h4></summary>
+				<h5>Name:</h5>
+				<input value={cvData.name} name="name" onChange={simpleInputUpdate}></input>
+				<h5>Profession:</h5>
+				<input value={cvData.prof} name="prof" onChange={simpleInputUpdate}></input>
+				<h5>Email:</h5>
+				<input value={cvData.email} name="email" onChange={simpleInputUpdate}></input>
+				<h5>Phone:</h5>
+				<input value={cvData.phone} name="phone" onChange={simpleInputUpdate}></input>
+				<h5>Address:</h5>
+				<input value={cvData.address} name="address" onChange={simpleInputUpdate}></input>
+				<hr />
+				<h4>About Me</h4>
+				<textarea 
+				id="aboutme" cols="30" rows="10" 
+				value={cvData.description} 
+				name="description"
+				onChange={simpleInputUpdate}
+				>	
+				</textarea>
+			</details>
 
 			<hr />
-			<h4>Education</h4>
+
+			<details>
+			<summary>
+				<h4>Education</h4>
+			</summary>
 			{/* TEST IT HERE FIRST */}
 			<EducationList 
 				educationArray={cvData.educationArray} 
@@ -55,15 +61,22 @@ const EntireForm = (props) => {
 					"educationArray"
 				)}} 
 			/>
+			</details>
+
+			<hr />
 			
-			<h4>Work Experience</h4>
-			<ExperienceList 
-				experienceArray={cvData.experienceArray}
-				setExperienceArray={(newArray) => {inputUpdate(
-					newArray,
-					"experienceArray"
-				)}}
-			/>
+			<details>
+				<summary>
+					<h4>Work Experience</h4>
+				</summary>
+				<ExperienceList
+					experienceArray={cvData.experienceArray}
+					setExperienceArray={(newArray) => {inputUpdate(
+						newArray,
+						"experienceArray"
+					)}}
+				/>
+			</details>
 
 			<hr/>
 

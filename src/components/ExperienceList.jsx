@@ -14,7 +14,8 @@ import uniqid from "uniqid"; // React always requires you to add a unique key to
 		console.log(experienceArray);
 	}
 
-	const deleteExperience = (index) => {
+	const deleteExperience = (index,e) => {
+		e.preventDefault();
 		setExperienceArray(
 			experienceArray.filter((item, i) => i !== index)
 		)
@@ -31,12 +32,13 @@ import uniqid from "uniqid"; // React always requires you to add a unique key to
 	}
 
 	return(
-		<div className="form-experience">
+		<div className="experience-container">
 			{
 				experienceArray.map((experience, index) => {
 					return(
-					<form>
-						<button onClick={() => {deleteExperience(index)}}>Delete</button>
+					<form className="experienceForm formX">
+						<h4>Job #{index + 1}</h4>
+						<button onClick={e => {deleteExperience(index, e)}}>Delete</button>
 						<h5>Years?</h5>
 						<input value={experience.yearRange} onChange={e => {updateExperienceItem(index, "yearRange", e.target.value)}}></input>
 						<h5>Company?</h5>
