@@ -3,7 +3,7 @@ import React, { Component, useCallback, useEffect, useRef, useState } from "reac
 const CVRender = (props) =>{ // props will be cvData from App.jsx
 	const {name, prof, description, address, email, phone, experienceArray, educationArray} = props.cvData;
 	return(
-	<div class="CVRender">
+	<div className="CVRender">
 		<div className="cv-header">
 			{/*<img></img>*/}
 			<h1 className="cv-name">{name}</h1>
@@ -11,13 +11,13 @@ const CVRender = (props) =>{ // props will be cvData from App.jsx
 			<hr />
 		</div>
 
-		<div class="cv-details-container">
-			<div class="cv-description">
+		<div className="cv-details-container">
+			<div className="cv-description">
 				<h3>About Me</h3>
 				{description}
 			</div>
 
-			<div class="cv-personal">
+			<div className="cv-personal">
 				<h3>Personal Info</h3>
 				<ul>
 					<li>Address: {address}</li>
@@ -33,7 +33,7 @@ const CVRender = (props) =>{ // props will be cvData from App.jsx
 				{experienceArray.map((experience, index) => {
 					return(
 						<li>
-							<h4>{experience.yearRange} &nbsp; {experience.prof}</h4>
+							<h4>{experience.yearRange} &nbsp; {experience.prof} at {experience.company}</h4>
 							<p>{experience.description}</p>
 						</li>
 					)

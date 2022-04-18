@@ -15,22 +15,7 @@ const [cvData, setcvData] = useState({ // I think for any realistic application 
   email: '',
   phone: '',
   experienceArray: [],
-  educationArray: [
-  /*
-    {
-      yearRange: "2019-2020",
-      location: "Cool Kidz Skool",
-      type: "Bachlors",
-      major: "Computer Science",
-    },
-    {
-      yearRange: "2021-2077",
-      location: "The Nevada Desert",
-      type: "Doctorate",
-      major: "Cooking Meth",
-    }
-  */
-  ],
+  educationArray: [],
 });
 
   return (
